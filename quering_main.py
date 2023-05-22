@@ -4,6 +4,7 @@
 - field name with types (string, number, date string objects etc.) with range of values (lets say field name = price , then value is number (float, int) which is random number from a(min) to b(max) )
 - number o documents to create."""
 
+# pylint: disable-all
 
 import random
 import string
@@ -19,7 +20,7 @@ class DbPopulator:
     def generate_random_string(self, min_lenght: int, max_lenght: int) -> str:
         length = random.randint(min_lenght, max_lenght)
         letters = string.ascii_letters
-        return "".join(random.choice(letters) for _ in range(length))
+        return "".join(random.choice(letters) for letter in range(length))
 
     def generate_random_number(self, min_value: int, max_value: int) -> int:
         return random.randint(min_value, max_value)
